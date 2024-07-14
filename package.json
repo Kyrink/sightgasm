@@ -1,0 +1,56 @@
+{
+  "name": "sightgasm",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fontsource/bebas-neue": "^5.0.20",
+    "@fontsource/exo-2": "^5.0.18",
+    "@fontsource/montserrat": "^5.0.18",
+    "@fontsource/oswald": "^5.0.20",
+    "@fontsource/poppins": "^5.0.14",
+    "@fontsource/roboto": "^5.0.13",
+    "@react-three/drei": "^9.107.0",
+    "@react-three/fiber": "^8.16.8",
+    "@tailwindcss/typography": "^0.5.13",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "framer-motion": "^11.2.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-intersection-observer": "^9.10.3",
+    "react-router-dom": "^6.23.1",
+    "react-scripts": "^5.0.1",
+    "three": "^0.165.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "source-map-loader": "^5.0.0",
+    "tailwindcss": "^3.4.4"
+  }
+}

@@ -1,0 +1,317 @@
+/* ./src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/****************** Messy Grid ***********************/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  position: relative;
+}
+
+.main-text {
+  position: absolute;
+  font-size: 8rem;
+  line-height: 0.8;
+  font-weight: bold;
+  z-index: 2;
+  width: 400px;
+  text-align: start;
+}
+
+.image-wrapper {
+  position: absolute;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-wrapper img {
+  object-fit: cover;
+}
+
+.image-wrapper.small img {
+  width: 150px;
+  height: 200px;
+}
+
+.image-wrapper.medium img {
+  width: 200px;
+  height: 350px;
+}
+
+.image-wrapper.large img {
+  width: 400px;
+  height: 200px;
+}
+
+.foreground {
+  z-index: 5;
+  filter: blur(0px);
+}
+
+.middle {
+  z-index: 3;
+  filter: blur(1.5px);
+}
+
+.background {
+  z-index: 1;
+  filter: blur(3px);
+}
+
+.image-wrapper:hover {
+  filter: blur(0px) !important;
+}
+
+
+/****************** About Me ***********************/
+.App {
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  height: 200vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  cursor: none;
+  /* Hide the cursor */
+}
+
+.camera-container {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.camera {
+  width: 400px;
+  /* Adjust size as needed */
+  transform: rotate(180deg);
+  /* Rotate the camera 180 degrees */
+}
+
+.text-container {
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-family: monospace;
+  font-weight: bold;
+  text-align: left;
+  z-index: 5;
+}
+
+.text-hidden {
+  position: relative;
+  z-index: 4;
+  mix-blend-mode: difference;
+  color: black;
+}
+
+.spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: #fff;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+/****************** Cube ***********************/
+.grid-face {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 50;
+  padding: 10px;
+}
+
+.grid-image-wrapper {
+  position: absolute;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.grid-image-wrapper img {
+  object-fit: cover;
+}
+
+.grid-image-wrapper.small-img img {
+  width: 250px;
+  height: 300px;
+}
+
+.grid-image-wrapper.medium-img img {
+  width: 200px;
+  height: 250px;
+}
+
+.grid-image-wrapper.large-img img {
+  width: 400px;
+  height: 350px;
+}
+
+
+/****************** Custom CSS for focus effect ***********************/
+.focus-effect {
+  position: relative;
+  padding: 10px;
+  display: inline-block;
+}
+
+.focus-effect::before,
+.focus-effect::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid red;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.focus-effect::before {
+  top: -5px;
+  left: 0px;
+  border-bottom: none;
+  border-right: none;
+  transform: translate(-50%, -50%);
+}
+
+.focus-effect::after {
+  bottom: 5px;
+  right: 0px;
+  border-top: none;
+  border-left: none;
+  transform: translate(50%, 50%);
+}
+
+.focus-effect:hover::before,
+.focus-effect:hover::after {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.focus-effect:hover .rec {
+  display: block;
+}
+
+.rec {
+  display: none;
+  position: absolute;
+  top: -5px;
+  left: 10px;
+  font-size: 12px;
+  color: red;
+}
+
+.focus-effect:hover .rec-dot {
+  background-color: red;
+}
+
+.rec-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: transparent;
+  margin-right: 4px;
+}
+
+/****************** custom shape ***********************/
+.custom-shape {
+  transform: perspective(1000px) rotateY(40deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-shape:hover {
+  transform: perspective(1000px) rotateY(0deg) scale(1.05);
+}
+
+/****************** backdrop ***********************/
+
+.text-shadow {
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
+.z-30 {
+  z-index: 30;
+}
+
+.bottom-10 {
+  bottom: 2.5rem;
+}
+
+.top-6 {
+  top: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: white;
+}
+
+
+
+/****************** Fonts ***********************/
+@font-face {
+  font-family: 'Hamida';
+  src: url('./fonts/Origamet-Hamida-78168446/Origamet\ Hamida.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rhapsody';
+  src: url('./fonts/Rhapsody/otf/OTRhapsody-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anargya';
+  src: url('./fonts/anargya-font-1703214158-0/anargya.otf') format('truetype');
+
+}
